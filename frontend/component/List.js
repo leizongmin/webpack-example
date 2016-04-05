@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * Webpack Example
+ *
+ * @author Zongmin Lei <leizongmin@gmail.com>
+ */
+
 import React from 'react';
 import apiClient from '../lib/api_client';
 

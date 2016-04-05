@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * Webpack Example
+ *
+ * @author Zongmin Lei <leizongmin@gmail.com>
+ */
+
 import browserRequest from 'browser-request';
 
 function promiseRequest(options) {

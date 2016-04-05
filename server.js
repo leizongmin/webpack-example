@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * Webpack Example
+ *
+ * @author Zongmin Lei <leizongmin@gmail.com>
+ */
+
 const path = require('path');
 const express = require('express');
 
