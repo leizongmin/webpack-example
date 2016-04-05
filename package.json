@@ -8,7 +8,7 @@
     "compile": "cd frontend && webpack --progress --colors",
     "dev": "cd frontend && webpack-dev-server --progress --colors"
   },
-  "author": "",
+  "author": "Zongmin Lei <leizongmin@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.6.5",
