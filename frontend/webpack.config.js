@@ -40,9 +40,11 @@ module.exports = {
     port: 3000,
     inline: true,
     historyApiFallback: true,
-    colors: true,
-    stats: 'normal',
+    stats: { colors: true },
     hot: true,
+    proxy: {
+      '*': 'http://127.0.0.1:3001',
+    }
   },
   babel: {
     plugins: ['transform-runtime'],

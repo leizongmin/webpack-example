@@ -21,6 +21,7 @@ export default class List extends React.Component {
         <a href="#" className="list-group-item" key={i}>
           {item.title}
           <span className="badge">回复 {item.reply_count}</span>
+          <span className="badge">阅读 {item.visit_count}</span>
         </a>
       );
     });
