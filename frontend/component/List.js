@@ -13,14 +13,22 @@ export default class List extends React.Component {
     apiClient.getList({})
     .then(list => this.setState({list}))
     .catch(err => console.error(err));
+
+    if (!window.CCC) window.CCC = 0;
+    console.log('load -', new Date(), window.CCC++);
   }
 
   render() {
     const list = this.state.list.map(item => {
-      return <a href="#" className="list-group-item" key={item.id}>{item.title}</a>;
+      return (
+        <a href="#" className="list-group-item" key={item.id}>
+          {item.title}
+          <span className="badge">{item.reply_count}</span>
+        </a>
+      );
     });
     return (
-      <ul class="list-group">
+      <ul className="list-group">
         {list}
       </ul>
     );
