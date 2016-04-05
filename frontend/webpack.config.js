@@ -1,12 +1,18 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    test: './test.js',
+    test: [
+      'webpack-dev-server/client?http://0.0.0.0:3000',
+      'webpack/hot/only-dev-server',
+      path.resolve(__dirname, './test.js'),
+    ],
   },
   output: {
-    path: path.resolve(__dirname, 'bundle'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js',
+    publicPath: '/webpack',
   },
   module: {
     loaders: [
@@ -20,14 +26,26 @@ module.exports = {
         loader: 'imports?jQuery=jquery'
       },
       {
-        loader: 'babel',
+        loaders: ['react-hot', 'babel'],
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        query: {
-          plugins: ['transform-runtime'],
-          presets: ['es2015', 'stage-0', 'react'],
-        }
       },
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  devServer: {
+    contentBase: __dirname,
+    port: 3000,
+    inline: true,
+    historyApiFallback: true,
+    colors: true,
+    stats: 'normal',
+    hot: true,
+  },
+  babel: {
+    plugins: ['transform-runtime'],
+    presets: ['es2015', 'stage-0', 'react'],
+  },
 };
