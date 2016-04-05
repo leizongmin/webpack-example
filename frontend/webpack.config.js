@@ -19,6 +19,15 @@ module.exports = {
         test: /\/bootstrap\/js\//,
         loader: 'imports?jQuery=jquery'
       },
+      {
+        loader: 'babel',
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        query: {
+          plugins: ['transform-runtime'],
+          presets: ['es2015', 'stage-0', 'react'],
+        }
+      },
     ]
   }
 };
