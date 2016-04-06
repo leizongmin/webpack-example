@@ -17,16 +17,14 @@ export default class List extends React.Component {
       <ul className="list-group">
         {list.map((item, i) => {
           return (
-            <li className="list-group-item" key={i}>
-              <Link to={`/topic/${item.id}`}>
-                {item.title}
-              </Link>
+            <Link className="list-group-item" key={i} to={`/topic/${item.id}`}>
+              {item.title}
               <span className="badge">
                 <i className="glyphicon glyphicon-eye-open"></i> {item.visit_count}
                 &nbsp;&nbsp;
                 <i className="glyphicon glyphicon-edit"></i>{item.reply_count}
               </span>
-            </li>
+            </Link>
           );
         })}
       </ul>
