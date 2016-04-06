@@ -10,17 +10,7 @@ import 'bootstrap-webpack';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/test.css';
-import List from './component/List';
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <List />
-      </div>
-    );
-  }
-}
+import App from './component/App';
 
 const app = document.createElement('div');
 app.id = 'app';

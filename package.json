@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "cd frontend && webpack --progress --colors",
-    "dev": "cd frontend && webpack-dev-server --progress --colors"
+    "dev": "cd frontend && webpack-dev-server --progress --colors",
+    "server": "node server"
   },
   "author": "Zongmin Lei <leizongmin@gmail.com>",
   "license": "ISC",
