@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import apiClient from '../lib/api_client';
 
 export default class List extends React.Component {
 
