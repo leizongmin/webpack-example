@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   getListByPage = (n) => {
-    apiClient.getList({page: n})
+    apiClient.getList({page: n, limit: 12})
     .then(list => this.setState({list}))
     .catch(err => console.error(err));
   };
@@ -29,7 +29,7 @@ export default class App extends React.Component {
     return (
       <div>
         <List list={this.state.list}/>
-        <Pagination />
+        <Pagination selectPage={this.getListByPage}/>
       </div>
     );
   }
