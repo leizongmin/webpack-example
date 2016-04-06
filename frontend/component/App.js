@@ -8,6 +8,7 @@
 
 import React from 'react';
 import {Router, Route, Link, browserHistory} from 'react-router'
+import Header from './Header';
 import Home from './Home';
 import Detail from './Detail';
 
@@ -21,11 +22,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path="/" component={Home}/>
-        <Route path="topic/:id" component={Detail}/>
-        <Route path="*" component={NoMatch}/>
-      </Router>
+      <div>
+        <Header/>
+        <Router history={browserHistory}>
+          <Route path="/" component={Home}/>
+          <Route path="topic/:id" component={Detail}/>
+          <Route path="*" component={NoMatch}/>
+        </Router>
+      </div>
     );
   }
 }
