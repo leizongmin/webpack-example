@@ -7,30 +7,25 @@
  */
 
 import React from 'react';
-import apiClient from '../lib/api_client';
-import List from './List';
-import Pagination from './Pagination';
+import {Router, Route, Link, browserHistory} from 'react-router'
+import Home from './Home';
+import Detail from './Detail';
+
+class NoMatch extends React.Component {
+  render() {
+    return <div>Not Found</div>;
+  }
+}
 
 export default class App extends React.Component {
 
-  state = {};
-
-  componentDidMount() {
-    this.getListByPage(1);
-  }
-
-  getListByPage = (n) => {
-    apiClient.getList({page: n, limit: 12})
-    .then(list => this.setState({list}))
-    .catch(err => console.error(err));
-  };
-
   render() {
     return (
-      <div>
-        <List list={this.state.list}/>
-        <Pagination selectPage={this.getListByPage}/>
-      </div>
+      <Router history={browserHistory}>
+        <Route path="/" component={Home}/>
+        <Route path="topic/:id" component={Detail}/>
+        <Route path="*" component={NoMatch}/>
+      </Router>
     );
   }
 }

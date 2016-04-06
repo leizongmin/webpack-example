@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class List extends React.Component {
 
@@ -16,11 +17,16 @@ export default class List extends React.Component {
       <ul className="list-group">
         {list.map((item, i) => {
           return (
-            <a href="#" className="list-group-item" key={i}>
-              {item.title}
-              <span className="badge">回复 {item.reply_count}</span>
-              <span className="badge">阅读 {item.visit_count}</span>
-            </a>
+            <li className="list-group-item" key={i}>
+              <Link to={`/topic/${item.id}`}>
+                {item.title}
+              </Link>
+              <span className="badge">
+                <i className="glyphicon glyphicon-eye-open"></i> {item.visit_count}
+                &nbsp;&nbsp;
+                <i className="glyphicon glyphicon-edit"></i>{item.reply_count}
+              </span>
+            </li>
           );
         })}
       </ul>

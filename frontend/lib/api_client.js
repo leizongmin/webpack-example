@@ -51,3 +51,7 @@ apiClient.request = function (method, path, data = {}) {
 apiClient.getList = function (options = {}) {
   return apiClient.request('get', 'topics', options).then(ret => Promise.resolve(ret.data));
 };
+
+apiClient.getDetail = function (id, options = {}) {
+  return apiClient.request('get', `topic/${id}`, options).then(ret => Promise.resolve(ret.data));
+};
