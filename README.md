@@ -1,5 +1,7 @@
 # Webpack + React + Bootstrap Example
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/leizongmin/webpack-example.svg)](https://greenkeeper.io/)
+
 ## 安装
 
 ```bash
